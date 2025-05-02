@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости - Медицинский туризм в Узбекистане - MediTour</title>
+    <meta name="description" content="Последние новости медицинского туризма в Узбекистане. Информация о новых клиниках, методах лечения, законодательстве и событиях.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-text"><span class="primary">Medi</span><span class="secondary">Tour</span></a>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Услуги</a></li>
+                    <li class="nav-item"><a href="partners.html" class="nav-link">Партнеры</a></li>
+                    <li class="nav-item"><a href="news.html" class="nav-link active">Новости</a></li>
+                </ul>
+            </nav>
+            
+            <div class="lang-dropdown">
+                <button class="lang-dropdown-btn">
+                    <span class="current-lang">RU</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="lang-dropdown-content">
+                    <a href="#" data-lang="ru" class="lang-option active">Русский</a>
+                    <a href="#" data-lang="en" class="lang-option">English</a>
+                    <a href="#" data-lang="uz" class="lang-option">O'zbek</a>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="mobile-menu">
+            <ul class="mobile-menu-list">
+                <li class="mobile-menu-item"><a href="index.html" class="mobile-menu-link">Главная</a></li>
+                <li class="mobile-menu-item"><a href="services.html" class="mobile-menu-link">Услуги</a></li>
+                <li class="mobile-menu-item"><a href="partners.html" class="mobile-menu-link">Партнеры</a></li>
+                <li class="mobile-menu-item"><a href="news.html" class="mobile-menu-link active">Новости</a></li>
+            </ul>
+            <div class="mobile-lang-selector">
+                <div class="lang-dropdown">
+                    <button class="lang-dropdown-btn">
+                        <span class="current-lang">RU</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-dropdown-content">
+                        <a href="#" data-lang="ru" class="lang-option active">Русский</a>
+                        <a href="#" data-lang="en" class="lang-option">English</a>
+                        <a href="#" data-lang="uz" class="lang-option">O'zbek</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero small -->
+    <section class="hero-small">
+        <div class="container">
+            <h1 class="hero-small-title fade-in">Новости медицинского туризма</h1>
+            <p class="hero-small-subtitle fade-in">Актуальная информация о развитии медицинского туризма в Узбекистане и мире</p>
+        </div>
+    </section>
+
+    <!-- News Search & Filter section -->
+    <section class="section news-filter">
+        <div class="container">
+            <div class="news-search-container fade-in">
+                <form id="news-search-form" class="news-search-form">
+                    <div class="search-input-container">
+                        <input type="search" placeholder="Поиск новостей..." class="search-input">
+                        <button type="submit" class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+                
+                <div id="search-results-info" class="search-results-info hidden">
+                    Найдено: <span id="search-count">0</span> новостей
+                </div>
+                
+                <button id="reset-search-btn" class="btn btn-outline hidden">
+                    <i class="fas fa-times"></i> Сбросить поиск
+                </button>
+            </div>
+            
+            <div class="news-filter-buttons fade-in">
+                <button class="news-filter-btn active" data-category="all">Все категории</button>
+                <button class="news-filter-btn" data-category="Инфраструктура">Инфраструктура</button>
+                <button class="news-filter-btn" data-category="События">События</button>
+                <button class="news-filter-btn" data-category="Курорты">Курорты</button>
+                <button class="news-filter-btn" data-category="Законодательство">Законодательство</button>
+                <button class="news-filter-btn" data-category="Услуги">Услуги</button>
+                <button class="news-filter-btn" data-category="Традиции">Традиции</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- News List -->
+    <section class="section news-list">
+        <div class="container">
+            <div class="grid grid-3" id="news-container">
+                <!-- News items will be loaded via JavaScript -->
+                <!-- Placeholders for demonstration -->
+                <div class="news-item fade-in">
+                    <div class="news-image-container">
+                        <img src="img/news/news-1.jpg" alt="Новость 1" class="news-image">
+                        <div class="news-category">Инфраструктура</div>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">15 апреля 2025</div>
+                        <h3 class="news-title">Узбекистан открывает новый медицинский центр для иностранных пациентов</h3>
+                        <p class="news-text">В Ташкенте открылся современный медицинский центр, специализирующийся на обслуживании иностранных пациентов. Центр оснащен новейшим оборудованием...</p>
+                        <a href="news-detail.html?id=1" class="news-link">Читать далее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="news-item fade-in delay-1">
+                    <div class="news-image-container">
+                        <img src="img/news/news-2.jpg" alt="Новость 2" class="news-image">
+                        <div class="news-category">События</div>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">10 апреля 2025</div>
+                        <h3 class="news-title">Международная конференция по медицинскому туризму пройдет в Самарканде</h3>
+                        <p class="news-text">В сентябре 2025 года в историческом городе Самарканд состоится международная конференция по медицинскому туризму. Эксперты из разных стран обсудят...</p>
+                        <a href="news-detail.html?id=2" class="news-link">Читать далее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="news-item fade-in delay-2">
+                    <div class="news-image-container">
+                        <img src="img/news/news-3.jpg" alt="Новость 3" class="news-image">
+                        <div class="news-category">Курорты</div>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">5 апреля 2025</div>
+                        <h3 class="news-title">Новый санаторий в Чарваке: лечение и отдых на берегу водохранилища</h3>
+                        <p class="news-text">В живописном районе Чарвакского водохранилища открылся новый санаторий, предлагающий комплексное лечение и реабилитацию пациентов в сочетании с отдыхом...</p>
+                        <a href="news-detail.html?id=3" class="news-link">Читать далее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="news-item fade-in">
+                    <div class="news-image-container">
+                        <img src="img/news/news-4.jpg" alt="Новость 4" class="news-image">
+                        <div class="news-category">Законодательство</div>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">28 марта 2025</div>
+                        <h3 class="news-title">Узбекистан упрощает визовый режим для медицинских туристов</h3>
+                        <p class="news-text">Правительство Узбекистана приняло решение об упрощении процедуры получения виз для иностранцев, приезжающих в страну с целью лечения. Теперь получить визу можно будет в течение 3 дней...</p>
+                        <a href="news-detail.html?id=4" class="news-link">Читать далее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="news-item fade-in delay-1">
+                    <div class="news-image-container">
+                        <img src="img/news/news-5.jpg" alt="Новость 5" class="news-image">
+                        <div class="news-category">Услуги</div>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">20 марта 2025</div>
+                        <h3 class="news-title">Стоматологический туризм в Узбекистане: качество по доступным ценам</h3>
+                        <p class="news-text">Узбекистан становится популярным направлением для стоматологического туризма. Современные клиники, квалифицированные врачи и доступные цены привлекают пациентов...</p>
+                        <a href="news-detail.html?id=5" class="news-link">Читать далее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="news-item fade-in delay-2">
+                    <div class="news-image-container">
+                        <img src="img/news/news-6.jpg" alt="Новость 6" class="news-image">
+                        <div class="news-category">Традиции</div>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">15 марта 2025</div>
+                        <h3 class="news-title">Традиционная медицина Узбекистана: от древних знаний к современным методикам</h3>
+                        <p class="news-text">Новый центр традиционной медицины в Бухаре предлагает лечение по старинным рецептам в сочетании с современными подходами. Центр уже привлек внимание иностранных пациентов...</p>
+                        <a href="news-detail.html?id=6" class="news-link">Читать далее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination fade-in">
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn pagination-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscribe section -->
+    <section class="section subscription-section bg-gray-light">
+        <div class="container">
+            <div class="subscription-container">
+                <div class="subscription-content fade-in">
+                    <h2 class="subscription-title">Подпишитесь на наши новости</h2>
+                    <p class="subscription-text">Получайте самую актуальную информацию о медицинском туризме в Узбекистане на вашу электронную почту.</p>
+                </div>
+                
+                <form class="subscription-form fade-in">
+                    <div class="subscription-input-container">
+                        <input type="email" placeholder="Ваш e-mail" class="subscription-input" required>
+                        <button type="submit" class="subscription-button btn btn-primary">Подписаться</button>
+                    </div>
+                    <div class="subscription-privacy">
+                        <input type="checkbox" id="privacy-consent" required>
+                        <label for="privacy-consent">Я согласен на обработку персональных данных</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">Связаться с нами</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle fade-in">Заполните форму ниже, чтобы получить бесплатную консультацию или задать вопрос.</p>
+            </div>
+            
+            <div class="contact-form-container">
+                <div class="contact-info slide-in-left">
+                    <h3>Контактная информация</h3>
+                    <p>Мы всегда рады помочь вам и ответить на все ваши вопросы о медицинском туризме в Узбекистане.</p>
+                    
+                    <ul class="contact-info-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Адрес</h4>
+                                <p>г. Ташкент, ул. Амира Темура, 107Б</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Телефон</h4>
+                                <p>+998 71 123-45-67</p>
+                                <p>+998 90 123-45-67</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@meditour.uz</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Часы работы</h4>
+                                <p>Пн-Пт: 9:00 - 18:00</p>
+                                <p>Сб: 10:00 - 15:00</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form slide-in-right">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Ваше имя *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Телефон *</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Тема</label>
+                            <select id="subject" class="form-control">
+                                <option value="">Выберите тему</option>
+                                <option value="partnership">Сотрудничество</option>
+                                <option value="question">Вопрос о публикации</option>
+                                <option value="feedback">Отзыв</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Сообщение *</label>
+                            <textarea id="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-group form-checkbox">
+                            <input type="checkbox" id="consent" required>
+                            <label for="consent">Я согласен на обработку персональных данных</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-ripple">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <a href="index.html" class="logo-text"><span class="primary">Medi</span><span class="secondary">Tour</span></a>
+                    </div>
+                    <p class="footer-text">Мы специализируемся на организации медицинского туризма в Узбекистане, предлагая качественное лечение в лучших клиниках страны по доступным ценам.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Услуги</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#dental">Стоматология</a></li>
+                        <li><a href="services.html#plastic">Пластическая хирургия</a></li>
+                        <li><a href="services.html#orthopedics">Ортопедия</a></li>
+                        <li><a href="services.html#checkup">Диагностика</a></li>
+                        <li><a href="services.html#cardiology">Кардиология</a></li>
+                        <li><a href="services.html#spa">Санаторно-курортное лечение</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Полезные ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="partners.html">Партнеры</a></li>
+                        <li><a href="news.html">Новости</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Контакты</h3>
+                    <ul class="footer-info">
+                        <li><i class="fas fa-map-marker-alt"></i> г. Ташкент, ул. Амира Темура, 107Б</li>
+                        <li><i class="fas fa-phone-alt"></i> +998 71 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@meditour.uz</li>
+                        <li><i class="fas fa-clock"></i> Пн-Пт: 9:00 - 18:00, Сб: 10:00 - 15:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 MediTour. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/news.js"></script>
+</body>
+</html>

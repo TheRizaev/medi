@@ -1,0 +1,101 @@
+{
+    "lang_code": "en",
+    "lang_name": "English",
+    
+    "nav_home": "Home",
+    "nav_services": "Services",
+    "nav_partners": "Partners",
+    "nav_news": "News",
+    
+    "hero_title": "Medical Tourism in Uzbekistan",
+    "hero_subtitle": "Get quality treatment in modern clinics of Uzbekistan with experienced doctors at affordable prices. We organize your trip from consultation to full recovery.",
+    "btn_services": "Our Services",
+    "btn_contact": "Contact Us",
+    
+    "features_title": "Why Choose Uzbekistan",
+    "features_subtitle": "Uzbekistan offers a unique combination of high-quality medical care, affordable prices, and rich cultural heritage.",
+    
+    "feature_specialists": "Qualified Specialists",
+    "feature_specialists_text": "Doctors with international education, experience abroad, and knowledge of foreign languages.",
+    
+    "feature_clinics": "Modern Clinics",
+    "feature_clinics_text": "Latest equipment and medical technologies in clinics that meet international standards.",
+    
+    "feature_prices": "Affordable Prices",
+    "feature_prices_text": "The cost of medical services in Uzbekistan is 2-3 times lower than in developed countries, with comparable quality.",
+    
+    "feature_logistics": "Convenient Logistics",
+    "feature_logistics_text": "Direct flights from many countries, simplified visa regime, and well-developed transport infrastructure.",
+    
+    "feature_culture": "Rich Culture",
+    "feature_culture_text": "Opportunity to combine treatment with visiting historical cities of the Silk Road - Samarkand, Bukhara, Khiva.",
+    
+    "feature_support": "Complete Support",
+    "feature_support_text": "Individual approach and support at all stages - from document translation to transfer and accommodation.",
+    
+    "services_title": "Popular Medical Directions",
+    "services_subtitle": "Uzbekistan offers a wide range of medical services, but the following directions are especially popular:",
+    
+    "service_dental": "Dentistry",
+    "service_plastic": "Plastic Surgery",
+    "service_orthopedics": "Orthopedics",
+    "service_checkup": "Diagnostics (Check-Up)",
+    "service_cardiology": "Cardiology",
+    "service_spa": "Spa Treatment",
+    
+    "service_card_1_title": "Dentistry",
+    "service_card_1_text": "Modern equipment and materials, experienced dentists, and prices 2-3 times lower than in Europe make Uzbekistan a popular destination for dental tourism.",
+    
+    "service_card_2_title": "Plastic Surgery",
+    "service_card_2_text": "A wide range of aesthetic and reconstructive operations according to international standards. Highly professional surgeons and affordable prices attract patients from different countries.",
+    
+    "service_card_3_title": "Orthopedics",
+    "service_card_3_text": "Diagnosis and treatment of musculoskeletal diseases, joint replacement, sports medicine, and rehabilitation programs.",
+    
+    "process_title": "How We Work",
+    "process_subtitle": "We accompany you at all stages of your medical journey, ensuring comfort and effectiveness of treatment.",
+    
+    "process_step_1": "Consultation",
+    "process_step_1_text": "Free consultation, analysis of medical documentation, and determination of patient needs.",
+    
+    "process_step_2": "Selection of Clinic and Doctor",
+    "process_step_2_text": "Selection of a suitable clinic and specialist, preliminary calculation of treatment and stay costs.",
+    
+    "process_step_3": "Trip Organization",
+    "process_step_3_text": "Assistance in obtaining a visa, booking tickets, transfer, and accommodation in Uzbekistan.",
+    
+    "process_step_4": "Support",
+    "process_step_4_text": "Airport meeting, language support, accompaniment at all stages of treatment and diagnostics.",
+    
+    "cta_title": "Ready to Start Your Medical Journey?",
+    "cta_text": "Contact us today to get a free consultation and learn more about treatment options in Uzbekistan.",
+    
+    "contact_title": "Contact Us",
+    "contact_subtitle": "Fill out the form below to get a free consultation or ask a question.",
+    "contact_info_title": "Contact Information",
+    "contact_info_text": "We are always happy to help you and answer all your questions about medical tourism in Uzbekistan.",
+    "contact_address_label": "Address",
+    "contact_address": "Tashkent, Amir Temur st., 107B",
+    "contact_phone_label": "Phone",
+    "contact_hours_label": "Working Hours",
+    "contact_hours": "Mon-Fri: 9:00 - 18:00",
+    "contact_hours_weekend": "Sat: 10:00 - 15:00",
+    "contact_name": "Your Name",
+    "contact_phone": "Phone",
+    "contact_service": "Service of Interest",
+    "contact_select_service": "Select a service",
+    "contact_message": "Message",
+    "contact_consent": "I agree to the processing of personal data",
+    "contact_submit": "Send Message",
+    
+    "footer_about": "We specialize in organizing medical tourism in Uzbekistan, offering quality treatment in the best clinics of the country at affordable prices.",
+    "footer_services": "Services",
+    "footer_links": "Useful Links",
+    "footer_contacts": "Contacts",
+    "footer_rights": "All rights reserved.",
+    
+    "option_other": "Other",
+    "btn_view_all": "View All",
+    "btn_apply_filter": "Apply Filters",
+    "search_placeholder": "Search news..."
+  }

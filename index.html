@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медицинский туризм в Узбекистане - MediTour</title>
+    <meta name="description" content="Качественное медицинское обслуживание в Узбекистане для иностранных пациентов. Современные клиники, опытные врачи, доступные цены.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-text"><span class="primary">Medi</span><span class="secondary">Tour</span></a>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link active">Главная</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Услуги</a></li>
+                    <li class="nav-item"><a href="partners.html" class="nav-link">Партнеры</a></li>
+                    <li class="nav-item"><a href="news.html" class="nav-link">Новости</a></li>
+                </ul>
+            </nav>
+            
+            <div class="lang-dropdown">
+                <button class="lang-dropdown-btn">
+                    <span class="current-lang">RU</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="lang-dropdown-content">
+                    <a href="#" data-lang="ru" class="lang-option active">Русский</a>
+                    <a href="#" data-lang="en" class="lang-option">English</a>
+                    <a href="#" data-lang="uz" class="lang-option">O'zbek</a>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="mobile-menu">
+            <ul class="mobile-menu-list">
+                <li class="mobile-menu-item"><a href="index.html" class="mobile-menu-link active">Главная</a></li>
+                <li class="mobile-menu-item"><a href="services.html" class="mobile-menu-link">Услуги</a></li>
+                <li class="mobile-menu-item"><a href="partners.html" class="mobile-menu-link">Партнеры</a></li>
+                <li class="mobile-menu-item"><a href="news.html" class="mobile-menu-link">Новости</a></li>
+            </ul>
+            <div class="mobile-lang-selector">
+                <div class="lang-dropdown">
+                    <button class="lang-dropdown-btn">
+                        <span class="current-lang">RU</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-dropdown-content">
+                        <a href="#" data-lang="ru" class="lang-option active">Русский</a>
+                        <a href="#" data-lang="en" class="lang-option">English</a>
+                        <a href="#" data-lang="uz" class="lang-option">O'zbek</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text slide-in-left">
+                <h1 class="hero-title">Медицинский туризм в Узбекистане</h1>
+                <p class="hero-subtitle">Получите качественное лечение в современных клиниках Узбекистана с опытными врачами и по доступным ценам. Мы организуем вашу поездку от консультации до полного выздоровления.</p>
+                <div class="btn-group">
+                    <a href="services.html" class="btn btn-primary btn-ripple">Наши услуги</a>
+                    <a href="#contact" class="btn btn-outline">Связаться с нами</a>
+                </div>
+            </div>
+            <div class="hero-image slide-in-right">
+                <img src="img/hero-image.jpg" alt="Медицинский туризм в Узбекистане">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features section -->
+    <section class="section features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">Почему стоит выбрать Узбекистан</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle fade-in">Узбекистан предлагает уникальное сочетание высококачественной медицинской помощи, комфортных цен и богатого культурного наследия.</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Квалифицированные специалисты</h3>
+                        <p>Врачи с международным образованием, опытом работы за рубежом и владением иностранными языками.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item fade-in delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Современные клиники</h3>
+                        <p>Новейшее оборудование и медицинские технологии в клиниках, соответствующих международным стандартам.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item fade-in delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Доступные цены</h3>
+                        <p>Стоимость медицинских услуг в Узбекистане в 2-3 раза ниже, чем в развитых странах, при сопоставимом качестве.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services section -->
+    <section class="section services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">Популярные медицинские направления</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle fade-in">Узбекистан предлагает широкий спектр медицинских услуг, но особенно популярны следующие направления:</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card service-card fade-in">
+                    <div class="image-zoom">
+                        <img src="img/services/dental.jpg" alt="Стоматология" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Стоматология</h3>
+                        <p class="card-text">Современное оборудование и материалы, опытные стоматологи и цены в 2-3 раза ниже, чем в Европе делают Узбекистан популярным направлением для стоматологического туризма.</p>
+                        <a href="services.html#dental" class="card-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="card service-card fade-in delay-1">
+                    <div class="image-zoom">
+                        <img src="img/services/plastic.jpg" alt="Пластическая хирургия" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Пластическая хирургия</h3>
+                        <p class="card-text">Широкий спектр эстетических и реконструктивных операций по международным стандартам. Высокопрофессиональные хирурги и доступные цены привлекают пациентов из разных стран.</p>
+                        <a href="services.html#plastic" class="card-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="card service-card fade-in delay-2">
+                    <div class="image-zoom">
+                        <img src="img/services/orthopedics.jpg" alt="Ортопедия" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Ортопедия</h3>
+                        <p class="card-text">Диагностика и лечение заболеваний опорно-двигательного аппарата, эндопротезирование суставов, спортивная медицина и реабилитационные программы.</p>
+                        <a href="services.html#orthopedics" class="card-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="services.html" class="btn btn-primary btn-ripple fade-in">Все медицинские направления</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process section -->
+    <section class="section process bg-gray-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">Как мы работаем</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle fade-in">Мы сопровождаем вас на всех этапах медицинского путешествия, обеспечивая комфорт и эффективность лечения.</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step fade-in">
+                    <div class="process-step-number">1</div>
+                    <div class="process-step-content">
+                        <h3>Консультация</h3>
+                        <p>Бесплатная консультация, анализ медицинской документации и определение потребностей пациента.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step fade-in delay-1">
+                    <div class="process-step-number">2</div>
+                    <div class="process-step-content">
+                        <h3>Подбор клиники и врача</h3>
+                        <p>Подбор подходящей клиники и специалиста, предварительный расчет стоимости лечения и пребывания.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step fade-in delay-2">
+                    <div class="process-step-number">3</div>
+                    <div class="process-step-content">
+                        <h3>Организация поездки</h3>
+                        <p>Помощь в получении визы, бронирование билетов, трансфер и размещение в Узбекистане.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step fade-in delay-3">
+                    <div class="process-step-number">4</div>
+                    <div class="process-step-content">
+                        <h3>Сопровождение</h3>
+                        <p>Встреча в аэропорту, языковая поддержка, сопровождение на всех этапах лечения и диагностики.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA section -->
+    <section class="section cta">
+        <div class="container">
+            <h2 class="cta-title fade-in">Готовы начать свое медицинское путешествие?</h2>
+            <p class="cta-text fade-in">Свяжитесь с нами сегодня, чтобы получить бесплатную консультацию и узнать больше о возможностях лечения в Узбекистане.</p>
+            <a href="#contact" class="btn btn-primary btn-ripple fade-in">Связаться с нами</a>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">Связаться с нами</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle fade-in">Заполните форму ниже, чтобы получить бесплатную консультацию или задать вопрос.</p>
+            </div>
+            
+            <div class="contact-form-container">
+                <div class="contact-info slide-in-left">
+                    <h3>Контактная информация</h3>
+                    <p>Мы всегда рады помочь вам и ответить на все ваши вопросы о медицинском туризме в Узбекистане.</p>
+                    
+                    <ul class="contact-info-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Адрес</h4>
+                                <p>г. Ташкент, ул. Амира Темура, 107Б</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Телефон</h4>
+                                <p>+998 71 123-45-67</p>
+                                <p>+998 90 123-45-67</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@meditour.uz</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Часы работы</h4>
+                                <p>Пн-Пт: 9:00 - 18:00</p>
+                                <p>Сб: 10:00 - 15:00</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form slide-in-right">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Ваше имя *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Телефон *</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service" class="form-label">Интересующая услуга</label>
+                            <select id="service" class="form-control">
+                                <option value="">Выберите услугу</option>
+                                <option value="dental">Стоматология</option>
+                                <option value="plastic">Пластическая хирургия</option>
+                                <option value="orthopedics">Ортопедия</option>
+                                <option value="checkup">Диагностика (Check-Up)</option>
+                                <option value="cardiology">Кардиология</option>
+                                <option value="spa">Санаторно-курортное лечение</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Сообщение *</label>
+                            <textarea id="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-group form-checkbox">
+                            <input type="checkbox" id="consent" required>
+                            <label for="consent">Я согласен на обработку персональных данных</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-ripple">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <a href="index.html" class="logo-text"><span class="primary">Medi</span><span class="secondary">Tour</span></a>
+                    </div>
+                    <p class="footer-text">Мы специализируемся на организации медицинского туризма в Узбекистане, предлагая качественное лечение в лучших клиниках страны по доступным ценам.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Услуги</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#dental">Стоматология</a></li>
+                        <li><a href="services.html#plastic">Пластическая хирургия</a></li>
+                        <li><a href="services.html#orthopedics">Ортопедия</a></li>
+                        <li><a href="services.html#checkup">Диагностика</a></li>
+                        <li><a href="services.html#cardiology">Кардиология</a></li>
+                        <li><a href="services.html#spa">Санаторно-курортное лечение</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Полезные ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="partners.html">Партнеры</a></li>
+                        <li><a href="news.html">Новости</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Контакты</h3>
+                    <ul class="footer-info">
+                        <li><i class="fas fa-map-marker-alt"></i> г. Ташкент, ул. Амира Темура, 107Б</li>
+                        <li><i class="fas fa-phone-alt"></i> +998 71 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@meditour.uz</li>
+                        <li><i class="fas fa-clock"></i> Пн-Пт: 9:00 - 18:00, Сб: 10:00 - 15:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 MediTour. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

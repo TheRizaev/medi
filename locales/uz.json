@@ -1,0 +1,101 @@
+{
+    "lang_code": "uz",
+    "lang_name": "O'zbek",
+    
+    "nav_home": "Asosiy",
+    "nav_services": "Xizmatlar",
+    "nav_partners": "Hamkorlar",
+    "nav_news": "Yangiliklar",
+    
+    "hero_title": "O'zbekistonda tibbiy turizm",
+    "hero_subtitle": "O'zbekistonning zamonaviy klinikalarida tajribali shifokorlar bilan arzon narxlarda sifatli davolanishni oling. Biz maslahatdan to to'liq tiklanishgacha bo'lgan safar tashkil qilamiz.",
+    "btn_services": "Bizning xizmatlar",
+    "btn_contact": "Biz bilan bog'lanish",
+    
+    "features_title": "Nega O'zbekistonni tanlash kerak",
+    "features_subtitle": "O'zbekiston yuqori sifatli tibbiy yordam, qulay narxlar va boy madaniy merosni o'zida mujassam etgan.",
+    
+    "feature_specialists": "Malakali mutaxassislar",
+    "feature_specialists_text": "Xalqaro ma'lumotga ega, chet elda ishlagan va xorijiy tillarni biladigan shifokorlar.",
+    
+    "feature_clinics": "Zamonaviy klinikalar",
+    "feature_clinics_text": "Xalqaro standartlarga javob beradigan, eng yangi uskunalar va tibbiy texnologiyalar bilan jihozlangan klinikalar.",
+    
+    "feature_prices": "Arzon narxlar",
+    "feature_prices_text": "O'zbekistonda tibbiy xizmatlar narxi rivojlangan mamlakatlarga nisbatan 2-3 baravar arzon, sifati esa barobar.",
+    
+    "feature_logistics": "Qulay logistika",
+    "feature_logistics_text": "Ko'p mamlakatlardan to'g'ridan-to'g'ri parvozlar, soddalashtirilgan viza rejimi va rivojlangan transport infratuzilmasi.",
+    
+    "feature_culture": "Boy madaniyat",
+    "feature_culture_text": "Davolanishni Ipak yo'lining tarixiy shaharlari - Samarqand, Buxoro, Xivani ziyorat qilish bilan birlashtirish imkoniyati.",
+    
+    "feature_support": "To'liq yordam",
+    "feature_support_text": "Hujjatlarni tarjima qilishdan tortib, transport va joylashtirish bo'yicha barcha bosqichlarda individual yondashuv va qo'llab-quvvatlash.",
+    
+    "services_title": "Mashhur tibbiy yo'nalishlar",
+    "services_subtitle": "O'zbekiston keng doiradagi tibbiy xizmatlarni taklif qiladi, lekin quyidagi yo'nalishlar ayniqsa mashhur:",
+    
+    "service_dental": "Stomatologiya",
+    "service_plastic": "Plastik jarrohlik",
+    "service_orthopedics": "Ortopediya",
+    "service_checkup": "Diagnostika (Check-Up)",
+    "service_cardiology": "Kardiologiya",
+    "service_spa": "Sanatoriy-kurort davolash",
+    
+    "service_card_1_title": "Stomatologiya",
+    "service_card_1_text": "Zamonaviy uskunalar va materiallar, tajribali stomatologlar va Yevropadagiga nisbatan 2-3 baravar arzon narxlar O'zbekistonni stomatologik turizm uchun mashhur yo'nalishga aylantiradi.",
+    
+    "service_card_2_title": "Plastik jarrohlik",
+    "service_card_2_text": "Xalqaro standartlarga muvofiq estetik va rekonstruktiv operatsiyalarning keng doirasi. Yuqori malakali jarrohlar va arzon narxlar turli mamlakatlardan bemorlarni jalb qiladi.",
+    
+    "service_card_3_title": "Ortopediya",
+    "service_card_3_text": "Tayanch-harakat tizimi kasalliklarini tashxislash va davolash, bo'g'imlarni almashtirish, sport tibbiyoti va reabilitatsiya dasturlari.",
+    
+    "process_title": "Qanday ishlaymiz",
+    "process_subtitle": "Davolanishning qulayligi va samaradorligini ta'minlagan holda, siz bilan tibbiy sayohatingizning barcha bosqichlarida hamroh bo'lamiz.",
+    
+    "process_step_1": "Konsultatsiya",
+    "process_step_1_text": "Bepul maslahat, tibbiy hujjatlarni tahlil qilish va bemor ehtiyojlarini aniqlash.",
+    
+    "process_step_2": "Klinika va shifokor tanlash",
+    "process_step_2_text": "Mos keladigan klinika va mutaxassisni tanlash, davolanish va turar joy xarajatlarini dastlabki hisob-kitob qilish.",
+    
+    "process_step_3": "Sayohat tashkil etish",
+    "process_step_3_text": "Viza olishda yordam, chipta bron qilish, O'zbekistonda transfer va turar joy.",
+    
+    "process_step_4": "Qo'llab-quvvatlash",
+    "process_step_4_text": "Aeroportda kutib olish, til yordami, davolash va diagnostikaning barcha bosqichlarida hamrohlik.",
+    
+    "cta_title": "Tibbiy sayohatingizni boshlashga tayyormisiz?",
+    "cta_text": "O'zbekistonda davolanish imkoniyatlari haqida ko'proq ma'lumot olish uchun bugun biz bilan bog'laning va bepul maslahat oling.",
+    
+    "contact_title": "Biz bilan bog'lanish",
+    "contact_subtitle": "Bepul maslahat olish yoki savol berish uchun quyidagi formani to'ldiring.",
+    "contact_info_title": "Aloqa ma'lumotlari",
+    "contact_info_text": "Biz sizga yordam berishdan va O'zbekistondagi tibbiy turizm haqidagi barcha savollaringizga javob berishdan doimo xursandmiz.",
+    "contact_address_label": "Manzil",
+    "contact_address": "Toshkent, Amir Temur ko'chasi, 107B",
+    "contact_phone_label": "Telefon",
+    "contact_hours_label": "Ish vaqti",
+    "contact_hours": "Dush-Jum: 9:00 - 18:00",
+    "contact_hours_weekend": "Shan: 10:00 - 15:00",
+    "contact_name": "Ismingiz",
+    "contact_phone": "Telefon",
+    "contact_service": "Qiziqtirgan xizmat",
+    "contact_select_service": "Xizmatni tanlang",
+    "contact_message": "Xabar",
+    "contact_consent": "Shaxsiy ma'lumotlarni qayta ishlashga roziman",
+    "contact_submit": "Xabar yuborish",
+    
+    "footer_about": "Biz O'zbekistonda tibbiy turizmni tashkil etishga ixtisoslashganmiz, mamlakatning eng yaxshi klinikalarida arzon narxlarda sifatli davolanishni taklif qilamiz.",
+    "footer_services": "Xizmatlar",
+    "footer_links": "Foydali havolalar",
+    "footer_contacts": "Kontaktlar",
+    "footer_rights": "Barcha huquqlar himoyalangan.",
+    
+    "option_other": "Boshqa",
+    "btn_view_all": "Hammasi ko'rish",
+    "btn_apply_filter": "Filtrlarni qo'llash",
+    "search_placeholder": "Yangiliklar qidirish..."
+  }
