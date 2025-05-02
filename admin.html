@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ панель - MediTour</title>
+    <meta name="description" content="Административная панель для управления сайтом медицинского туризма MediTour">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/admin.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Login Container -->
+    <div id="login-container" class="admin-login-container">
+        <div class="admin-login-form">
+            <div class="admin-logo">
+                <span class="logo-text"><span class="primary">Medi</span><span class="secondary">Tour</span> Admin</span>
+            </div>
+            
+            <h2>Вход в систему</h2>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username" class="form-label">Логин</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" class="form-control" required autocomplete="username">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password" class="form-label">Пароль</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" class="form-control" required autocomplete="current-password">
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Войти</button>
+            </form>
+            
+            <div class="admin-login-footer">
+                <p>&copy; 2025 MediTour. Все права защищены.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Admin Container -->
+    <div id="admin-container" class="admin-container hidden">
+        <!-- Admin Header -->
+        <header class="admin-header">
+            <div class="admin-header-left">
+                <div class="admin-logo">
+                    <span class="logo-text"><span class="primary">Medi</span><span class="secondary">Tour</span> Admin</span>
+                </div>
+            </div>
+            
+            <div class="admin-header-right">
+                <div class="admin-user-info">
+                    <span id="admin-username">Администратор</span>
+                    <button id="logout-btn" class="btn btn-outline btn-sm">
+                        <i class="fas fa-sign-out-alt"></i> Выйти
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Admin Content -->
+        <div class="admin-content">
+            <!-- Admin Sidebar -->
+            <aside class="admin-sidebar">
+                <nav class="admin-nav">
+                    <ul class="admin-nav-list">
+                        <li class="admin-nav-item">
+                            <a href="#dashboard" data-tab="dashboard-tab" class="admin-tab-link active">
+                                <i class="fas fa-tachometer-alt"></i> Дашборд
+                            </a>
+                        </li>
+                        <li class="admin-nav-item">
+                            <a href="#news" data-tab="news-tab" class="admin-tab-link">
+                                <i class="fas fa-newspaper"></i> Новости
+                            </a>
+                        </li>
+                        <li class="admin-nav-item">
+                            <a href="#settings" data-tab="settings-tab" class="admin-tab-link">
+                                <i class="fas fa-cog"></i> Настройки
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            
+            <!-- Admin Main -->
+            <main class="admin-main">
+                <!-- Dashboard Tab -->
+                <div id="dashboard-tab" class="admin-tab-content">
+                    <div class="admin-card-header">
+                        <h2><i class="fas fa-tachometer-alt"></i> Дашборд</h2>
+                    </div>
+                    
+                    <!-- Admin Stats -->
+                    <div id="admin-stats" class="admin-stats">
+                        <!-- Stats will be loaded via JavaScript -->
+                        <div class="admin-stats-grid">
+                            <div class="admin-stat-card">
+                                <div class="admin-stat-icon">
+                                    <i class="fas fa-newspaper"></i>
+                                </div>
+                                <div class="admin-stat-content">
+                                    <div class="admin-stat-number">0</div>
+                                    <div class="admin-stat-label">Всего новостей</div>
+                                </div>
+                            </div>
+                            
+                            <div class="admin-stat-card">
+                                <div class="admin-stat-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div class="admin-stat-content">
+                                    <div class="admin-stat-number">0</div>
+                                    <div class="admin-stat-label">За последний месяц</div>
+                                </div>
+                            </div>
+                            
+                            <div class="admin-stat-card">
+                                <div class="admin-stat-icon">
+                                    <i class="fas fa-tags"></i>
+                                </div>
+                                <div class="admin-stat-content">
+                                    <div class="admin-stat-number">0</div>
+                                    <div class="admin-stat-label">Категорий</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Latest News Preview -->
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h3>Последние добавленные новости</h3>
+                            <a href="#news" data-tab="news-tab" class="btn btn-outline btn-sm admin-tab-link">
+                                Все новости
+                            </a>
+                        </div>
+                        
+                        <div class="admin-card-body">
+                            <div class="admin-latest-news" id="admin-latest-news">
+                                <!-- Latest news items will be loaded via JavaScript -->
+                                <div class="admin-news-row">
+                                    <div class="admin-news-date">15.04.2025</div>
+                                    <div class="admin-news-title">Узбекистан открывает новый медицинский центр для иностранных пациентов</div>
+                                    <div class="admin-news-category">Инфраструктура</div>
+                                    <div class="admin-news-actions">
+                                        <button class="btn btn-outline btn-sm edit-news-btn" data-id="1">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn btn-outline btn-sm delete-news-btn" data-id="1">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- News Tab -->
+                <div id="news-tab" class="admin-tab-content hidden">
+                    <div class="admin-card-header">
+                        <h2><i class="fas fa-newspaper"></i> Управление новостями</h2>
+                        <button id="add-news-btn" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Добавить новость
+                        </button>
+                    </div>
+                    
+                    <!-- News Filter -->
+                    <div class="admin-card">
+                        <div class="admin-card-body">
+                            <div class="admin-filter">
+                                <div class="search-input-container">
+                                    <input type="search" placeholder="Поиск новостей..." class="search-input" id="admin-news-search">
+                                    <button type="button" class="search-button">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                                
+                                <div class="admin-filter-selects">
+                                    <div class="form-group">
+                                        <select id="category-filter" class="form-control">
+                                            <option value="all">Все категории</option>
+                                            <option value="Инфраструктура">Инфраструктура</option>
+                                            <option value="События">События</option>
+                                            <option value="Курорты">Курорты</option>
+                                            <option value="Законодательство">Законодательство</option>
+                                            <option value="Услуги">Услуги</option>
+                                            <option value="Традиции">Традиции</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <select id="date-filter" class="form-control">
+                                            <option value="all">Все даты</option>
+                                            <option value="week">За неделю</option>
+                                            <option value="month">За месяц</option>
+                                            <option value="year">За год</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- News List -->
+                    <div class="admin-card">
+                        <div class="admin-card-body">
+                            <div class="admin-table-container">
+                                <table class="admin-table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Превью</th>
+                                            <th>Заголовок</th>
+                                            <th>Категория</th>
+                                            <th>Дата</th>
+                                            <th>Действия</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="news-table-body">
+                                        <!-- News items will be loaded via JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- Pagination -->
+                            <div class="admin-pagination" id="admin-news-pagination">
+                                <!-- Pagination will be generated via JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- News Form Modal -->
+                    <div id="news-form-modal" class="admin-modal">
+                        <div class="admin-modal-content">
+                            <div class="admin-modal-header">
+                                <h3 id="news-form-title">Добавить новость</h3>
+                                <button class="admin-modal-close">&times;</button>
+                            </div>
+                            
+                            <div class="admin-modal-body">
+                                <form id="news-form">
+                                    <input type="hidden" id="news-id">
+                                    
+                                    <div class="form-group">
+                                        <label for="news-title" class="form-label">Заголовок *</label>
+                                        <input type="text" id="news-title" class="form-control" required>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="news-category" class="form-label">Категория *</label>
+                                            <select id="news-category" class="form-control" required>
+                                                <option value="">Выберите категорию</option>
+                                                <option value="Инфраструктура">Инфраструктура</option>
+                                                <option value="События">События</option>
+                                                <option value="Курорты">Курорты</option>
+                                                <option value="Законодательство">Законодательство</option>
+                                                <option value="Услуги">Услуги</option>
+                                                <option value="Традиции">Традиции</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="news-date" class="form-label">Дата *</label>
+                                            <input type="date" id="news-date" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="news-preview" class="form-label">Превью текста *</label>
+                                        <textarea id="news-preview" class="form-control" rows="3" maxlength="200" required></textarea>
+                                        <div class="form-hint">Краткое описание новости (до 200 символов)</div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="news-content" class="form-label">Содержание *</label>
+                                        <textarea id="news-content" class="form-control" rows="10" required></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">Изображение *</label>
+                                        <div class="image-upload-container">
+                                            <div class="image-preview" id="image-preview">
+                                                <img id="preview-image" src="img/placeholder.jpg" alt="Превью изображения">
+                                            </div>
+                                            <div class="image-upload-controls">
+                                                <input type="file" id="news-image" class="hidden-file-input" accept="image/*">
+                                                <button type="button" class="btn btn-outline btn-sm" id="upload-image-btn">
+                                                    <i class="fas fa-upload"></i> Загрузить изображение
+                                                </button>
+                                                <div class="form-hint">Рекомендуемый размер: 800x400 пикселей</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-footer">
+                                        <button type="button" class="btn btn-outline" id="cancel-news-btn">Отмена</button>
+                                        <button type="submit" class="btn btn-primary">Сохранить</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Delete Confirmation Modal -->
+                    <div id="delete-confirmation-modal" class="admin-modal">
+                        <div class="admin-modal-content">
+                            <div class="admin-modal-header">
+                                <h3>Подтверждение удаления</h3>
+                                <button class="admin-modal-close">&times;</button>
+                            </div>
+                            
+                            <div class="admin-modal-body">
+                                <p>Вы действительно хотите удалить эту новость? Это действие нельзя отменить.</p>
+                                
+                                <div class="form-footer">
+                                    <button type="button" class="btn btn-outline" id="cancel-delete-btn">Отмена</button>
+                                    <button type="button" class="btn btn-danger" id="confirm-delete-btn">Удалить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Settings Tab -->
+                <div id="settings-tab" class="admin-tab-content hidden">
+                    <div class="admin-card-header">
+                        <h2><i class="fas fa-cog"></i> Настройки</h2>
+                    </div>
+                    
+                    <!-- Import/Export -->
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h3>Импорт/Экспорт данных</h3>
+                        </div>
+                        
+                        <div class="admin-card-body">
+                            <div class="admin-settings-section">
+                                <h4>Экспорт данных</h4>
+                                <p>Скачайте резервную копию данных сайта в формате JSON</p>
+                                
+                                <div class="form-group">
+                                    <button id="export-news-btn" class="btn btn-outline">
+                                        <i class="fas fa-download"></i> Экспорт новостей
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="admin-settings-section">
+                                <h4>Импорт данных</h4>
+                                <p>Загрузите данные из файла JSON</p>
+                                
+                                <div class="form-group">
+                                    <input type="file" id="import-file" class="hidden-file-input" accept=".json">
+                                    <button id="import-btn" class="btn btn-outline">
+                                        <i class="fas fa-upload"></i> Импорт данных
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Change Password -->
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h3>Изменение пароля</h3>
+                        </div>
+                        
+                        <div class="admin-card-body">
+                            <form id="change-password-form">
+                                <div class="form-group">
+                                    <label for="current-password" class="form-label">Текущий пароль *</label>
+                                    <input type="password" id="current-password" class="form-control" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="new-password" class="form-label">Новый пароль *</label>
+                                    <input type="password" id="new-password" class="form-control" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="confirm-password" class="form-label">Подтверждение пароля *</label>
+                                    <input type="password" id="confirm-password" class="form-control" required>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">Изменить пароль</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <!-- Notification container -->
+    <div class="notification-container"></div>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/admin.js" type="module"></script>
+</body>
+</html>

@@ -1,282 +1,353 @@
 /**
- * JavaScript file for animations on MediTour Website
+ * JavaScript file for handling news functionality on MediTour Website
  */
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialize all animation components
-  initTextAnimation();
-  initParallaxEffect();
-  initStickyHeader();
-  initProgressBars();
-  initNumberCounter();
-  initImageZoom();
-  initScrollReveal();
+  // Initialize news components
+  initNewsFilter();
+  initNewsPagination();
+  initNewsSearch();
+  loadLatestNews();
 });
 
 /**
-* Animates text letter by letter
+* Load and display latest news on the homepage
 */
-function initTextAnimation() {
-  const animatedTexts = document.querySelectorAll('.animated-text');
+function loadLatestNews() {
+  const latestNewsContainer = document.getElementById('latest-news-container');
   
-  if (animatedTexts.length) {
-      animatedTexts.forEach((textElement) => {
-          // Get the text
-          let text = textElement.textContent;
-          textElement.textContent = '';
-          
-          // Create elements for each letter
-          for (let i = 0; i < text.length; i++) {
-              const span = document.createElement('span');
-              span.textContent = text[i];
-              span.style.animationDelay = `${i * 0.05}s`;
-              textElement.appendChild(span);
-          }
-          
-          // Trigger animation when element is in viewport
-          const observer = new IntersectionObserver((entries) => {
-              entries.forEach(entry => {
-                  if (entry.isIntersecting) {
-                      const spans = entry.target.querySelectorAll('span');
-                      spans.forEach(span => {
-                          span.classList.add('animated');
-                      });
-                      observer.unobserve(entry.target);
-                  }
+  if (latestNewsContainer) {
+      // Fetch news data from JSON file
+      fetch('data/news.json')
+          .then(response => response.json())
+          .then(newsData => {
+              // Sort news by date (newest first)
+              newsData.sort((a, b) => new Date(b.date) - new Date(a.date));
+              
+              // Take only the first 3 news items
+              const latestNews = newsData.slice(0, 3);
+              
+              // Clear the container
+              latestNewsContainer.innerHTML = '';
+              
+              // Create HTML for each news item
+              latestNews.forEach((newsItem, index) => {
+                  const newsElement = createNewsElement(newsItem, index);
+                  latestNewsContainer.appendChild(newsElement);
               });
+          })
+          .catch(error => {
+              console.error('Error loading news:', error);
+              latestNewsContainer.innerHTML = '<div class="alert alert-error">Ошибка загрузки новостей</div>';
           });
-          
-          observer.observe(textElement);
-      });
   }
 }
 
 /**
-* Creates parallax effect for background images
+* Create HTML element for a news item
+* @param {Object} newsItem - News item data
+* @param {Number} index - Index for delay effect
+* @returns {HTMLElement} News item element
 */
-function initParallaxEffect() {
-  const parallaxElements = document.querySelectorAll('.parallax');
+function createNewsElement(newsItem, index) {
+  const newsElement = document.createElement('div');
+  newsElement.className = `news-item fade-in${index > 0 ? ' delay-' + index : ''}`;
   
-  if (parallaxElements.length) {
-      window.addEventListener('scroll', function() {
-          const scrollTop = window.pageYOffset;
-          
-          parallaxElements.forEach(element => {
-              const speed = element.getAttribute('data-speed') || 0.5;
-              const offset = element.offsetTop;
-              const height = element.offsetHeight;
+  newsElement.innerHTML = `
+      <div class="news-image-container">
+          <img src="${newsItem.image}" alt="${newsItem.title}" class="news-image">
+          <div class="news-category">${newsItem.category}</div>
+      </div>
+      <div class="news-content">
+          <div class="news-date">${formatDate(newsItem.date)}</div>
+          <h3 class="news-title">${newsItem.title}</h3>
+          <p class="news-text">${newsItem.preview}</p>
+          <a href="news-detail.html?id=${newsItem.id}" class="news-link">Читать далее <i class="fas fa-arrow-right"></i></a>
+      </div>
+  `;
+  
+  return newsElement;
+}
+
+/**
+* Format date to localized string
+* @param {string} dateString - Date string
+* @returns {string} Formatted date
+*/
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  return date.toLocaleDateString(getCurrentLanguage(), options);
+}
+
+/**
+* Get current language from localStorage or default to 'ru'
+* @returns {string} Language code
+*/
+function getCurrentLanguage() {
+  return localStorage.getItem('selectedLanguage') || 'ru';
+}
+
+/**
+* Initialize news filter
+*/
+function initNewsFilter() {
+  const filterButtons = document.querySelectorAll('.news-filter-btn');
+  const newsContainer = document.getElementById('news-container');
+  
+  if (filterButtons.length && newsContainer) {
+      filterButtons.forEach(button => {
+          button.addEventListener('click', function() {
+              // Remove active class from all buttons
+              filterButtons.forEach(btn => btn.classList.remove('active'));
               
-              // Check if element is in viewport
-              if (scrollTop + window.innerHeight > offset && scrollTop < offset + height) {
-                  const yPos = (scrollTop - offset) * speed;
-                  element.style.backgroundPosition = `center ${yPos}px`;
-              }
-          });
-      });
-  }
-}
-
-/**
-* Makes header sticky on scroll
-*/
-function initStickyHeader() {
-  const header = document.querySelector('.header');
-  
-  if (header) {
-      let isSticky = false;
-      const headerHeight = header.offsetHeight;
-      
-      window.addEventListener('scroll', function() {
-          const scrollTop = window.pageYOffset;
-          
-          if (scrollTop > headerHeight && !isSticky) {
-              header.classList.add('sticky');
-              isSticky = true;
-          } else if (scrollTop <= headerHeight && isSticky) {
-              header.classList.remove('sticky');
-              isSticky = false;
-          }
-      });
-  }
-}
-
-/**
-* Animates progress bars
-*/
-function initProgressBars() {
-  const progressBars = document.querySelectorAll('.progress-bar');
-  
-  if (progressBars.length) {
-      const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  const percentage = entry.target.getAttribute('data-percentage') || 0;
-                  entry.target.style.width = `${percentage}%`;
-                  observer.unobserve(entry.target);
-              }
-          });
-      });
-      
-      progressBars.forEach(progressBar => {
-          observer.observe(progressBar);
-      });
-  }
-}
-
-/**
-* Animates number counters
-*/
-function initNumberCounter() {
-  const counters = document.querySelectorAll('.counter');
-  
-  if (counters.length) {
-      counters.forEach(counter => {
-          const targetValue = parseInt(counter.getAttribute('data-target'));
-          
-          if (!isNaN(targetValue)) {
-              counter.textContent = '0';
+              // Add active class to clicked button
+              this.classList.add('active');
               
-              const observer = new IntersectionObserver((entries) => {
-                  entries.forEach(entry => {
-                      if (entry.isIntersecting) {
-                          let currentValue = 0;
-                          const increment = Math.ceil(targetValue / 100);
-                          const duration = 2000; // Animation duration in milliseconds
-                          const stepTime = Math.floor(duration / (targetValue / increment));
-                          
-                          const timer = setInterval(() => {
-                              currentValue += increment;
-                              
-                              if (currentValue > targetValue) {
-                                  counter.textContent = targetValue.toLocaleString();
-                                  clearInterval(timer);
-                              } else {
-                                  counter.textContent = currentValue.toLocaleString();
-                              }
-                          }, stepTime);
-                          
-                          observer.unobserve(entry.target);
+              // Get selected category
+              const category = this.getAttribute('data-category');
+              
+              // Filter news
+              filterNewsByCategory(category);
+          });
+      });
+  }
+}
+
+/**
+* Filter news by category
+* @param {string} category - Category to filter by
+*/
+function filterNewsByCategory(category) {
+  const newsItems = document.querySelectorAll('.news-item');
+  
+  newsItems.forEach(item => {
+      const itemCategory = item.querySelector('.news-category').textContent;
+      
+      if (category === 'all' || itemCategory === category) {
+          item.style.display = 'block';
+      } else {
+          item.style.display = 'none';
+      }
+  });
+  
+  // Update pagination after filtering
+  updatePagination();
+}
+
+/**
+* Initialize news pagination
+*/
+function initNewsPagination() {
+  const paginationButtons = document.querySelectorAll('.pagination-btn');
+  const itemsPerPage = 6; // Number of news items per page
+  
+  if (paginationButtons.length) {
+      paginationButtons.forEach(button => {
+          button.addEventListener('click', function() {
+              if (!this.classList.contains('pagination-next')) {
+                  // Remove active class from all buttons
+                  paginationButtons.forEach(btn => btn.classList.remove('active'));
+                  
+                  // Add active class to clicked button
+                  this.classList.add('active');
+                  
+                  // Get page number
+                  const page = parseInt(this.textContent);
+                  
+                  // Display corresponding page
+                  displayNewsPage(page, itemsPerPage);
+              } else {
+                  // Handle next button
+                  const activePage = document.querySelector('.pagination-btn.active');
+                  if (activePage) {
+                      const nextPage = parseInt(activePage.textContent) + 1;
+                      const pageButton = document.querySelector(`.pagination-btn:not(.pagination-next):nth-child(${nextPage})`);
+                      
+                      if (pageButton) {
+                          pageButton.click();
                       }
-                  });
-              });
-              
-              observer.observe(counter);
-          }
-      });
-  }
-}
-
-/**
-* Image zoom effect on hover
-*/
-function initImageZoom() {
-  const zoomContainers = document.querySelectorAll('.image-zoom');
-  
-  if (zoomContainers.length) {
-      zoomContainers.forEach(container => {
-          const image = container.querySelector('img');
-          
-          if (image) {
-              // When mouse enters container
-              container.addEventListener('mouseenter', function() {
-                  image.style.transform = 'scale(1.1)';
-              });
-              
-              // When mouse leaves container
-              container.addEventListener('mouseleave', function() {
-                  image.style.transform = 'scale(1)';
-              });
-          }
-      });
-  }
-}
-
-/**
-* Reveals elements on scroll
-*/
-function initScrollReveal() {
-  const revealElements = document.querySelectorAll('.scroll-reveal');
-  
-  if (revealElements.length) {
-      const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  entry.target.classList.add('revealed');
-                  observer.unobserve(entry.target);
+                  }
               }
           });
-      }, {
-          threshold: 0.1 // Element is considered visible when 10% of it is in viewport
       });
       
-      revealElements.forEach(element => {
-          observer.observe(element);
-      });
+      // Initialize first page
+      displayNewsPage(1, itemsPerPage);
   }
 }
 
 /**
-* Button ripple effect
+* Display news page
+* @param {number} page - Page number
+* @param {number} itemsPerPage - Number of items per page
 */
-function initRippleButtons() {
-  const buttons = document.querySelectorAll('.btn-ripple');
+function displayNewsPage(page, itemsPerPage) {
+  const newsItems = document.querySelectorAll('.news-item:not([style*="display: none"])');
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
   
-  if (buttons.length) {
-      buttons.forEach(button => {
-          button.addEventListener('click', function(e) {
-              const rect = button.getBoundingClientRect();
-              const x = e.clientX - rect.left;
-              const y = e.clientY - rect.top;
-              
-              const ripple = document.createElement('span');
-              ripple.className = 'ripple';
-              ripple.style.left = `${x}px`;
-              ripple.style.top = `${y}px`;
-              
-              this.appendChild(ripple);
-              
-              setTimeout(() => {
-                  ripple.remove();
-              }, 600);
-          });
-      });
-  }
+  newsItems.forEach((item, index) => {
+      if (index >= startIndex && index < endIndex) {
+          item.style.display = 'block';
+      } else {
+          item.style.display = 'none';
+      }
+  });
 }
 
 /**
-* Gradient text animation
+* Update pagination based on filtered items
 */
-function initGradientText() {
-  const gradientTextElements = document.querySelectorAll('.gradient-text');
+function updatePagination() {
+  const newsItems = document.querySelectorAll('.news-item:not([style*="display: none"])');
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(newsItems.length / itemsPerPage);
   
-  if (gradientTextElements.length) {
-      gradientTextElements.forEach(element => {
-          // Add styling for gradient text
-          element.style.backgroundImage = 'linear-gradient(45deg, var(--primary-color), var(--secondary-color))';
-          element.style.backgroundSize = '200% 200%';
-          element.style.webkitBackgroundClip = 'text';
-          element.style.backgroundClip = 'text';
-          element.style.webkitTextFillColor = 'transparent';
-          element.style.color = 'transparent';
+  const pagination = document.querySelector('.pagination');
+  
+  if (pagination) {
+      // Clear pagination
+      pagination.innerHTML = '';
+      
+      // Add page buttons
+      for (let i = 1; i <= totalPages; i++) {
+          const pageButton = document.createElement('button');
+          pageButton.className = `pagination-btn${i === 1 ? ' active' : ''}`;
+          pageButton.textContent = i;
           
-          // Add animation
-          element.style.animation = 'gradient-shift 3s ease infinite';
-      });
+          pageButton.addEventListener('click', function() {
+              // Remove active class from all buttons
+              const paginationButtons = document.querySelectorAll('.pagination-btn');
+              paginationButtons.forEach(btn => btn.classList.remove('active'));
+              
+              // Add active class to clicked button
+              this.classList.add('active');
+              
+              // Display corresponding page
+              displayNewsPage(i, itemsPerPage);
+          });
+          
+          pagination.appendChild(pageButton);
+      }
+      
+      // Add next button if needed
+      if (totalPages > 1) {
+          const nextButton = document.createElement('button');
+          nextButton.className = 'pagination-btn pagination-next';
+          nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+          
+          nextButton.addEventListener('click', function() {
+              const activePage = document.querySelector('.pagination-btn.active');
+              if (activePage && parseInt(activePage.textContent) < totalPages) {
+                  const nextPage = parseInt(activePage.textContent) + 1;
+                  document.querySelector(`.pagination-btn:nth-child(${nextPage})`).click();
+              }
+          });
+          
+          pagination.appendChild(nextButton);
+      }
+      
+      // Display first page
+      displayNewsPage(1, itemsPerPage);
   }
 }
 
 /**
-* Floating animation for elements
+* Initialize news search
 */
-function initFloatingElements() {
-  const floatElements = document.querySelectorAll('.float');
+function initNewsSearch() {
+  const searchForm = document.getElementById('news-search-form');
+  const searchInput = document.querySelector('.search-input');
+  const resetSearchBtn = document.getElementById('reset-search-btn');
+  const searchResultsInfo = document.getElementById('search-results-info');
   
-  if (floatElements.length) {
-      floatElements.forEach((element, index) => {
-          // Add slight delay variation to make animation more natural
-          const delay = index * 0.2;
-          element.style.animationDelay = `${delay}s`;
+  if (searchForm && searchInput) {
+      searchForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const searchQuery = searchInput.value.trim().toLowerCase();
+          
+          if (searchQuery !== '') {
+              searchNews(searchQuery);
+              
+              if (resetSearchBtn) {
+                  resetSearchBtn.classList.remove('hidden');
+              }
+          }
       });
+      
+      if (resetSearchBtn) {
+          resetSearchBtn.addEventListener('click', function() {
+              searchInput.value = '';
+              resetSearch();
+              this.classList.add('hidden');
+              
+              if (searchResultsInfo) {
+                  searchResultsInfo.classList.add('hidden');
+              }
+          });
+      }
   }
 }
+
+/**
+* Search news by query
+* @param {string} query - Search query
+*/
+function searchNews(query) {
+  const newsItems = document.querySelectorAll('.news-item');
+  let matchCount = 0;
+  
+  newsItems.forEach(item => {
+      const title = item.querySelector('.news-title').textContent.toLowerCase();
+      const text = item.querySelector('.news-text').textContent.toLowerCase();
+      const category = item.querySelector('.news-category').textContent.toLowerCase();
+      
+      if (title.includes(query) || text.includes(query) || category.includes(query)) {
+          item.style.display = 'block';
+          matchCount++;
+      } else {
+          item.style.display = 'none';
+      }
+  });
+  
+  // Update search results info
+  const searchResultsInfo = document.getElementById('search-results-info');
+  const searchCount = document.getElementById('search-count');
+  
+  if (searchResultsInfo && searchCount) {
+      searchCount.textContent = matchCount;
+      searchResultsInfo.classList.remove('hidden');
+  }
+  
+  // Update pagination
+  updatePagination();
+}
+
+/**
+* Reset search and show all news
+*/
+function resetSearch() {
+  const newsItems = document.querySelectorAll('.news-item');
+  
+  newsItems.forEach(item => {
+      item.style.display = 'block';
+  });
+  
+  // Reset category filter
+  document.querySelector('.news-filter-btn[data-category="all"]').click();
+}
+
+// Export functions for use in other files
+export {
+  loadLatestNews,
+  createNewsElement,
+  formatDate,
+  getCurrentLanguage,
+  initNewsFilter,
+  initNewsPagination,
+  initNewsSearch
+};
