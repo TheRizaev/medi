@@ -1,5 +1,5 @@
 /* 
-* Animation styles for MediTour Medical Tourism Website
+* Animation styles for Medicon Travel Medical Tourism Website
 */
 
 /* Basic animation classes */
@@ -68,16 +68,19 @@
     transition-delay: 0.5s;
 }
 
-/* Pulse animation */
+/* Pulse animation for medical elements */
 @keyframes pulse {
     0% {
         transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(29, 111, 119, 0.4);
     }
-    50% {
+    70% {
         transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(29, 111, 119, 0);
     }
     100% {
         transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(29, 111, 119, 0);
     }
 }
 
@@ -85,16 +88,39 @@
     animation: pulse 2s infinite;
 }
 
-/* Glow effect */
+/* Heartbeat effect for heart-shaped elements */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    14% {
+        transform: scale(1.1);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.1);
+    }
+    70% {
+        transform: scale(1);
+    }
+}
+
+.heartbeat {
+    animation: heartbeat 1.5s infinite;
+}
+
+/* Glow effect for important elements */
 @keyframes glow {
     0% {
-        box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+        box-shadow: 0 0 5px rgba(29, 111, 119, 0.3);
     }
     50% {
-        box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+        box-shadow: 0 0 20px rgba(29, 111, 119, 0.6);
     }
     100% {
-        box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+        box-shadow: 0 0 5px rgba(29, 111, 119, 0.3);
     }
 }
 
@@ -102,7 +128,7 @@
     animation: glow 2s infinite;
 }
 
-/* Rotate animation */
+/* Rotate animation for loading indicators */
 @keyframes rotate {
     from {
         transform: rotate(0deg);
@@ -195,6 +221,34 @@
     height: 30px;
     animation: loading 1s linear infinite;
     margin: 20px auto;
+}
+
+/* Flight path animation for travel element */
+@keyframes flightPath {
+    0% {
+        transform: translate(0, 0) rotate(0);
+    }
+    25% {
+        transform: translate(20px, -15px) rotate(10deg);
+    }
+    50% {
+        transform: translate(40px, -5px) rotate(0);
+    }
+    75% {
+        transform: translate(20px, 5px) rotate(-10deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0);
+    }
+}
+
+.flight-animation {
+    animation: flightPath 6s ease-in-out infinite;
+}
+
+/* Logo animation on hover */
+.logo:hover .logo-icon svg {
+    animation: heartbeat 1.5s ease-in-out;
 }
 
 /* Slide in from different directions */
@@ -316,6 +370,23 @@
 .staggered-item:nth-child(6) { animation-delay: 0.6s; }
 .staggered-item:nth-child(7) { animation-delay: 0.7s; }
 .staggered-item:nth-child(8) { animation-delay: 0.8s; }
+
+/* Medical cross pulsing effect */
+@keyframes crossPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(242, 104, 49, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(242, 104, 49, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(242, 104, 49, 0);
+    }
+}
+
+.cross-pulse {
+    animation: crossPulse 2s infinite;
+}
 
 /* Animated text effects */
 .animated-text {

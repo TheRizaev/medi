@@ -1,5 +1,5 @@
 /* 
-* Responsive styles for MediTour website
+* Responsive styles for Medicon Travel website
 */
 
 /* 
@@ -51,6 +51,16 @@ img {
   
   .section {
     padding: 70px 0;
+  }
+  
+  /* Logo adjustments */
+  .logo-text {
+    font-size: 22px;
+  }
+  
+  .logo-icon svg {
+    width: 36px;
+    height: 36px;
   }
 }
 
@@ -148,6 +158,16 @@ img {
   
   .mobile-menu-toggle {
     display: block;
+  }
+  
+  /* Logo adjustments */
+  .logo-text {
+    font-size: 20px;
+  }
+  
+  .logo-icon svg {
+    width: 32px;
+    height: 32px;
   }
 }
 
@@ -309,6 +329,16 @@ img {
   .partnership-form .form-row {
     flex-direction: column;
     gap: 0;
+  }
+  
+  /* Logo adjustments */
+  .logo-text {
+    font-size: 18px;
+  }
+  
+  .logo-icon svg {
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -533,6 +563,16 @@ img {
   .hero-small-subtitle {
     font-size: 1rem;
   }
+  
+  /* Logo adjustments */
+  .logo-text {
+    font-size: 16px;
+  }
+  
+  .logo-icon svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 /* Make sure desktop navigation is always visible on larger screens */
@@ -604,6 +644,16 @@ img {
     padding: 8px 16px;
     font-size: 0.9rem;
   }
+  
+  /* Compact logo for very small screens */
+  .logo-text {
+    font-size: 14px;
+  }
+  
+  .logo-icon svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 /* Admin panel responsive styles */
@@ -631,6 +681,38 @@ img {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
+  }
+  .mobile-menu-toggle {
+    position: relative; /* Ensure proper positioning */
+    right: 150; /* Reset any right positioning */
+  }
+  
+  .header-container {
+    padding: 0 40px; /* Reduce padding at smaller screens */
+  }
+  
+  /* Make logo smaller on mobile to ensure space for menu toggle */
+  .logo-text {
+    font-size: 18px;
+  }
+  
+  .logo-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 375px) {
+  .logo-text {
+    font-size: 16px; /* Even smaller text on very small screens */
+  }
+  
+  .logo-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  .mobile-menu-toggle {
+    position: relative; /* Ensure proper positioning */
   }
 }
 
